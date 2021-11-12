@@ -3,19 +3,18 @@
 
 using namespace std;
 
-int main(){
-
-	Student *s1 = new Student();
+void printAny(){
+	Student s1 = Student("william", 1, 15);
 	student_t  s2 =  {"william", 1, 15};
 
+	cout << "Struct Size: ";
 	cout << sizeof(s2) << endl;
-	s1->setName("william");
-	s1->setId(1);
-	s1->setGradDate(15);
 
-	cout << "Size: ";
-	cout << sizeof(*s1) << endl;
-
-	s1->print();
+	cout << "Size Class: ";
+	cout << sizeof(s1) << endl;
+	s1.print();
+}
+int main(){
+	printAny();
 	return 0;
 }

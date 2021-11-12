@@ -3,10 +3,7 @@
 
 using namespace std;
 
-
-// struct arrange memory
-typedef struct student
-{
+typedef struct student{
     const char* name;
     int id;
     int gradDate;
@@ -19,6 +16,9 @@ class Student{
 	int gradDate;
 
 	public:
+		Student();
+		Student(string name, int id, int grade);
+		~Student();
 		void setName(string name){
             this->name = name;
         }
@@ -33,7 +33,23 @@ class Student{
 		int getId();
 		int getGradDate();
 		void print();
+
+		
 };
+
+Student::Student(){
+	cout << "Build me !!\n";
+}
+
+Student::Student(string name, int id, int grade){
+	this->name = name;
+	this->id = id;
+	this->gradDate = grade;
+}
+
+Student::~Student(){
+	cout << "You destroy me :(\n";
+}
 
 string Student::getName(){
 	return name;
@@ -53,4 +69,3 @@ void Student::print(){
     cout << "Id: " << id << endl;
     cout << "Grad Date: " << gradDate << endl;
 }
-
